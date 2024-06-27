@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\begin{itemize}
+    \item[(a)] Encontre a equação de Euler-Lagrange do Problema V e determine sua solução analítica considerando \(\gamma = 1\).
+\end{itemize}
+
+\textbf{Resposta:}
+
+Para encontrar a equação de Euler-Lagrange do Problema V, consideramos a formulação variacional:
+\[
+\int_0^1 (\alpha u'v' + u v) \, dx = \int_0^1 v \, dx \quad \forall v \in \mathcal{U},
+\]
+onde \(\mathcal{U} = H^1_0(0,1)\).
+
+A equação de Euler-Lagrange associada a este problema é obtida aplicando o método das variações. O funcional associado é:
+\[
+J[u] = \frac{1}{2} \int_0^1 (\alpha u'^2 + u^2) \, dx - \int_0^1 u \, dx.
+\]
+
+A equação de Euler-Lagrange para um funcional da forma:
+\[
+J[u] = \int_a^b L(x, u, u') \, dx
+\]
+é dada por:
+\[
+\frac{\partial L}{\partial u} - \frac{d}{dx} \left( \frac{\partial L}{\partial u'} \right) = 0.
+\]
+
+Para o nosso problema, o Lagrangiano \( L \) é:
+\[
+L(u, u') = \frac{1}{2} (\alpha u'^2 + u^2) - u.
+\]
+
+Calculamos as derivadas parciais:
+\[
+\frac{\partial L}{\partial u} = u - 1,
+\]
+\[
+\frac{\partial L}{\partial u'} = \alpha u'.
+\]
+
+Calculamos a derivada total com respeito a \(x\):
+\[
+\frac{d}{dx} \left( \frac{\partial L}{\partial u'} \right) = \alpha u''.
+\]
+
+Substituímos na equação de Euler-Lagrange:
+\[
+u - 1 - \alpha u'' = 0,
+\]
+ou seja,
+\[
+\alpha u'' - u = -1.
+\]
+
+Portanto, a equação de Euler-Lagrange é:
+\[
+\alpha u'' - u = -1.
+\]
+
+ Solução Analítica
+
+Para resolver esta equação diferencial, consideramos a equação homogênea associada:
+\[
+\alpha u'' - u = 0.
+\]
+
+A solução geral da equação homogênea é:
+\[
+u_h(x) = C_1 e^{\sqrt{\frac{1}{\alpha}} x} + C_2 e^{-\sqrt{\frac{1}{\alpha}} x}.
+\]
+
+Para a equação completa, procuramos uma solução particular \( u_p \):
+\[
+\alpha u_p'' - u_p = -1.
+\]
+
+Tentamos uma solução particular constante \( u_p = A \):
+\[
+-A = -1 \quad \Rightarrow \quad A = 1.
+\]
+
+Portanto, a solução geral da equação diferencial é:
+\[
+u(x) = C_1 e^{\sqrt{\frac{1}{\alpha}} x} + C_2 e^{-\sqrt{\frac{1}{\alpha}} x} + 1.
+\]
+
+Aplicamos as condições de contorno \( u(0) = 0 \) e \( u(1) = 0 \):
+
+1. Para \( u(0) = 0 \):
+\[
+C_1 + C_2 + 1 = 0 \quad \Rightarrow \quad C_1 + C_2 = -1.
+\]
+
+2. Para \( u(1) = 0 \):
+\[
+C_1 e^{\sqrt{\frac{1}{\alpha}}} + C_2 e^{-\sqrt{\frac{1}{\alpha}}} + 1 = 0.
+\]
+
+Resolvendo este sistema de equações lineares para \( C_1 \) e \( C_2 \):
+
+\[
+\begin{cases}
+C_1 + C_2 = -1, \\
+C_1 e^{\sqrt{\frac{1}{\alpha}}} + C_2 e^{-\sqrt{\frac{1}{\alpha}}} = -1.
+\end{cases}
+\]
+
+Vamos resolver este sistema:
+
+\[
+C_1 = \frac{-1 - e^{-\sqrt{\frac{1}{\alpha}}} (-1)}{e^{\sqrt{\frac{1}{\alpha}}} - e^{-\sqrt{\frac{1}{\alpha}}}} = -\frac{1}{e^{\sqrt{\frac{1}{\alpha}}} - e^{-\sqrt{\frac{1}{\alpha}}}},
+\]
+\[
+C_2 = -1 - C_1 = -1 + \frac{1}{e^{\sqrt{\frac{1}{\alpha}}} - e^{-\sqrt{\frac{1}{\alpha}}}}.
+\]
+
+Portanto, a solução é:
+
+\[
+u(x) = -\frac{1}{e^{\sqrt{\frac{1}{\alpha}}} - e^{-\sqrt{\frac{1}{\alpha}}}} e^{\sqrt{\frac{1}{\alpha}} x} + \left(-1 + \frac{1}{e^{\sqrt{\frac{1}{\alpha}}} - e^{-\sqrt{\frac{1}{\alpha}}}}\right) e^{-\sqrt{\frac{1}{\alpha}} x} + 1.
+\]
+
+\end{document}
